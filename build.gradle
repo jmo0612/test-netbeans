@@ -3,7 +3,7 @@ apply plugin: 'jacoco'
 apply plugin: 'application'
 
 
-mainClassName = 'com.thowo.testnetbeans.Main'
+mainClassName = 'com.thowo.testnetbeans.MainForm'
 
 repositories {
     jcenter()
