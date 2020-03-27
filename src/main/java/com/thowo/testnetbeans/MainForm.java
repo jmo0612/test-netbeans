@@ -6,10 +6,14 @@
 package com.thowo.testnetbeans;
 
 import com.thowo.jmjavaframework.JMFunctions;
+import com.thowo.jmjavaframework.db.JMConnection;
 import com.thowo.jmpcframework.JMPCFunctions;
 import com.thowo.jmpcframework.component.JMPCAsyncLoaderDefault;
 import com.thowo.jmpcframework.component.JMPCUIMessenger;
 import java.io.File;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -50,6 +54,11 @@ public class MainForm extends javax.swing.JFrame {
         jTextField1.setText("jTextField1");
 
         jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -95,6 +104,21 @@ public class MainForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new Thread(new Runnable(){
+            @Override
+            public void run() {
+                try {
+                    JMConnection con=GitIgnoreDBConnection.mySQLConnection();
+                    JMFunctions.trace(con.queryMySQL("select * from user").getString(1));
+                } catch (SQLException ex) {
+                    Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }).start();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
