@@ -15,7 +15,7 @@ import java.io.File;
  */
 public class GitIgnoreDBConnection {
     public static JMConnection mySQLConnection(){
-        return new JMConnection(new JMDBMySQL("SERVER","PORT","DATABASE","USER","PASS"));
+        return new JMConnection(new JMDBMySQL("remotemysql.com","3306","8vbZvACR5B","8vbZvACR5B","N01E4WgIFN"));
     }
     public static JMConnection mySQLiteConnection(){
         return new JMConnection(new File("SQLITE_FILE_PATH"));
