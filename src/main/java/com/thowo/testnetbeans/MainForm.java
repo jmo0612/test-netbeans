@@ -110,12 +110,8 @@ public class MainForm extends javax.swing.JFrame {
         new Thread(new Runnable(){
             @Override
             public void run() {
-                try {
-                    JMConnection con=GitIgnoreDBConnection.mySQLConnection();
-                    JMFunctions.trace(con.queryMySQL("select * from user").getString(1));
-                } catch (SQLException ex) {
-                    Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                JMConnection con=GitIgnoreDBConnection.mySQLConnection();
+                JMFunctions.trace(con.queryMySQL("select * from user",true).getString(1));
             }
         }).start();
     }//GEN-LAST:event_jButton1ActionPerformed
