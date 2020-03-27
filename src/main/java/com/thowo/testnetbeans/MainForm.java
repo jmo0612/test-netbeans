@@ -107,7 +107,7 @@ public class MainForm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        /*new Thread(new Runnable(){
+        new Thread(new Runnable(){
             @Override
             public void run() {
                 try {
@@ -117,7 +117,7 @@ public class MainForm extends javax.swing.JFrame {
                     Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        }).start();*/
+        }).start();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
