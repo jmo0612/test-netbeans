@@ -29,7 +29,7 @@ public class MainForm extends javax.swing.JFrame {
         
         JMFunctions.setUIListener(new JMPCUIMessenger());
         JMFunctions.setAsyncListener(new JMPCAsyncLoaderDefault( this.jLabel1 , this.jPanel1 ));
-        String languageExcelFileName = "raw/JMLanguagePack.xlsx";
+        String languageExcelFileName = "raw/jmlanguagepack.xls";
         ClassLoader classLoader = ClassLoader.getSystemClassLoader();
         File languageExcelFile = new File(classLoader.getResource(languageExcelFileName).getFile());
         JMPCFunctions.init(languageExcelFile);
